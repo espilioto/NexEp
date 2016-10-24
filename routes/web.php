@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/shows', 'ShowsController@store');
 
+Route::get('/autocomplete', array('as' => 'autocomplete', 'uses' => 'ShowsController@autocomplete'));
+
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');

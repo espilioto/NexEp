@@ -4,35 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Show;
 
 class ShowsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         for ($i=0; $i<1000; $i++) {
@@ -49,50 +34,50 @@ class ShowsController extends Controller
                 if (isset($show->id))
                     $arrayToInsert[(int)$show->id]['id'] = $show->id;
                 else 
-                    $arrayToInsert[(int)$show->id]['id'] = null;    
+                    $arrayToInsert[(int)$show->id]['id'] = "Not available";    
                 if (isset($show->url))
                     $arrayToInsert[(int)$show->id]['url'] = $show->url;
                 else 
-                    $arrayToInsert[(int)$show->id]['url'] = null;   
+                    $arrayToInsert[(int)$show->id]['url'] = "Not available";   
                 if (isset($show->name))
                     $arrayToInsert[(int)$show->id]['name'] = $show->name;
                 else 
-                    $arrayToInsert[(int)$show->id]['name'] = null;  
+                    $arrayToInsert[(int)$show->id]['name'] = "Not available";  
                 if (isset($show->status))
                     $arrayToInsert[(int)$show->id]['status'] = $show->status;
                 else 
-                    $arrayToInsert[(int)$show->id]['status'] = null;     
+                    $arrayToInsert[(int)$show->id]['status'] = "Not available";     
                 if (isset($show->_links->nextepisode)) {
                     $temp = json_decode(file_get_contents($show->_links->nextepisode->href, true));
                     
                     if (isset($temp->airstamp))
                         $arrayToInsert[(int)$show->id]['nextepisode'] = $temp->airstamp;
                     else
-                        $arrayToInsert[(int)$show->id]['nextepisode'] = null;
+                        $arrayToInsert[(int)$show->id]['nextepisode'] = "Not available";
 
                     if (isset($temp->season))
                         $arrayToInsert[(int)$show->id]['season'] = $temp->season;
                     else
-                        $arrayToInsert[(int)$show->id]['season'] = null;
+                        $arrayToInsert[(int)$show->id]['season'] = "Not available";
 
                     if (isset($temp->number))
                         $arrayToInsert[(int)$show->id]['number'] = $temp->number;
                     else
-                        $arrayToInsert[(int)$show->id]['number'] = null;
+                        $arrayToInsert[(int)$show->id]['number'] = "Not available";
                 }
                 else {
-                    $arrayToInsert[(int)$show->id]['nextepisode'] = null;
-                    $arrayToInsert[(int)$show->id]['season'] = null;
-                    $arrayToInsert[(int)$show->id]['number'] = null;
+                    $arrayToInsert[(int)$show->id]['nextepisode'] = "Not available";
+                    $arrayToInsert[(int)$show->id]['season'] = "Not available";
+                    $arrayToInsert[(int)$show->id]['number'] = "Not available";
                 }
                 if (isset($show->_links->self->href))
                     $arrayToInsert[(int)$show->id]['tvmaze'] = $show->_links->self->href;
                 else 
-                    $arrayToInsert[(int)$show->id]['tvmaze'] = null;    
+                    $arrayToInsert[(int)$show->id]['tvmaze'] = "Not available";    
                 if (isset($show->externals->imdb))
                     $arrayToInsert[(int)$show->id]['imdb'] = $show->externals->imdb;
                 else 
-                    $arrayToInsert[(int)$show->id]['imdb'] = null;  
+                    $arrayToInsert[(int)$show->id]['imdb'] = "Not available";  
                 if (isset($show->image->medium))
                     $arrayToInsert[(int)$show->id]['medium'] = $show->image->medium;
                 else 
@@ -104,11 +89,11 @@ class ShowsController extends Controller
                 if (isset($show->summary))
                     $arrayToInsert[(int)$show->id]['summary'] = $show->summary;
                 else 
-                    $arrayToInsert[(int)$show->id]['summary'] = null;   
+                    $arrayToInsert[(int)$show->id]['summary'] = "Not available";   
                 if (isset($show->updated))
                     $arrayToInsert[(int)$show->id]['updated'] = $show->updated;
                 else 
-                    $arrayToInsert[(int)$show->id]['updated'] = null;   
+                    $arrayToInsert[(int)$show->id]['updated'] = "Not available";   
             }
 
             echo "Finished parsing page " . $i;
@@ -134,46 +119,40 @@ class ShowsController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function autocomplete(Request $request)
+    {
+        $term = $request->term;
+        $data = Show::where('name', 'LIKE', '%'.$term.'%')
+                ->take(5)
+                ->get();
+        $result = array();
+
+        foreach ($data as $key => $value) {
+            $result[] = ['id'=>$value->id, 
+                        'label'=>$value->name, 
+                        'image'=>$value->medium
+            ];
+        }
+
+        // return response()->json($result);
+        return $result;
+    }
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

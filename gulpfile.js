@@ -20,6 +20,7 @@ elixir(mix => {
         'jquery-ui.css',
         'jquery-ui.structure.css',
         'jquery-ui.theme.css',
+        'style.css',
     ]);
     mix.scripts([
         'jquery-3.1.1.js',
@@ -31,27 +32,5 @@ elixir(mix => {
         
     mix.scripts('js.js', 'public/js/js.js');
 
-    // mix.stylesIn('resources/assets/css');
-    // mix.scriptsIn('resources/assets/js');
-
     mix.copy('resources/assets/fonts', 'public/fonts');
 });
-
-// elixir(function (mix) {
-//     mix
-//         .scripts([
-//             'app.js',
-//             'bootstrap.js',
-//             'jquery-3.1.1.js',
-//             'jquery-ui.js',
-//             'js.js',
-//             'npm.js'
-//         ])
-//         .styles([
-//             'bootstrap-theme.css',
-//             'bootstrap.css',
-//             'jquery-ui.css',
-//             'jquery-ui.structure.css',
-//             'jquery-ui.theme.css'
-//         ]);
-// });
