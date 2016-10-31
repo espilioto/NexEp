@@ -14,7 +14,7 @@ $( "#autocomplete").focus();
 
 $("#autocomplete").autocomplete({
     source: "/autocomplete" // name of controller followed by function
-  }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+  	}).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
         // var inner_html = '<a><div class="list_item_container"><div class="image"><img src="' + item.image + '"></div><div class="label">' + item.label + '</div><div class="description">' + item.description + '</div></div></a>';
         var inner_html = '<a><div class="list_item_container"><div class="image"><img src="http://loremflickr.com/60/88"></div><div class="label">' + item.label + '</div><div class="description">' + item.description + '</div></div></a>';
         return $( "<li></li>" )
@@ -22,4 +22,3 @@ $("#autocomplete").autocomplete({
             .append(inner_html)
             .appendTo( ul );
     };
-//# sourceMappingURL=js.js.map

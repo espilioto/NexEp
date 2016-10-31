@@ -11,13 +11,21 @@
 |
 */
 
+use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('mail', function()
+Route::get('see', function(Request $request)
 {
-    dd(Config::get('mail'));
+    return $derp = $request->user()->with('shows')->get();
+});
+Route::get('post', function(Request $request)
+{
+ //    $derp = App\User::find(8);
+	// $derp->shows()->attach(1);
+
+	return $request->user()->shows()->attach(150);
 });
 
 Route::get('/home', 'HomeController@index');

@@ -13,24 +13,29 @@ require('laravel-elixir-vue-2');
  |
  */
 
+elixir.config.sourcemaps = false;
+
 elixir(mix => {
-    mix.styles([
+    mix.styles([ //vendor css
         'bootstrap-theme.css',
         'bootstrap.css',
         'jquery-ui.css',
         'jquery-ui.structure.css',
         'jquery-ui.theme.css',
+        'font-awesome.css',
         'style.css',
     ]);
-    mix.scripts([
+    mix.scripts([ //vendor js
         'jquery-3.1.1.js',
         'jquery-ui.js',
         'bootstrap.js',
-        'app.js',
         'npm.js',
     ]);
+
+    mix.scripts('js.js', 'public/js/js.js'); //my js
         
-    mix.scripts('js.js', 'public/js/js.js');
+    mix.styles('landing.css', 'public/css/landing.css'); //theme files
+    mix.scripts('landing.js', 'public/js/landing.js');
 
     mix.copy('resources/assets/fonts', 'public/fonts');
 });

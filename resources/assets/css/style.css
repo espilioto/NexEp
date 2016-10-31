@@ -43,7 +43,6 @@ html, body {
 }
 
 /*autocomplete stuff*/
-
 .ui-autocomplete-loading {
     background: white url('/images/spinner.gif') right center no-repeat;
 }

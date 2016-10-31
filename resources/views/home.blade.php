@@ -1,17 +1,22 @@
 @extends('layouts.app')
+    
+@section('title')
+    <title>gotta.watch</title>
+@stop
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+    <div class="container-fluid text-center">
+        <div class="title">
+            gotta.watch
+        </div>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
+        <div class=".col-xs-6 .col-md-4">    
+            <label for="autocomplete">Search shows</label><br>
+            <input id="autocomplete" autocomplete="off">
         </div>
     </div>
-</div>
-@endsection
+@stop
+
+@section('js')
+    <script src="{{ elixir('js/js.js') }}"></script>
+@stop
