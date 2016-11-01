@@ -10,13 +10,7 @@ html {
     height: 100%;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body, h1, h2, h3, h4, h5, h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
@@ -35,14 +29,15 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../images/bg2.jpg) no-repeat center center;
+    background: url(../images/bg.jpg) no-repeat center center;
     background-size: cover;
+    align-items: center;
 }
 
 .intro-message {
     position: relative;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 35%;
+    text-align: center;
 }
 
 .intro-message > h1 {
@@ -52,7 +47,7 @@ h6 {
 }
 
 .intro-divider {
-    width: 400px;
+    width: 300px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }

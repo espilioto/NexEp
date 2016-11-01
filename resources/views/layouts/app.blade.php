@@ -13,7 +13,12 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
-    @yield('css')
+    <link rel="stylesheet" href="{{ elixir('css/style.css') }}">
+
+    @yield('head')
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Scripts -->
     <script>
@@ -26,7 +31,6 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
@@ -42,10 +46,6 @@
             </div>
 
             <div class="collapse inverse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;
-                </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Homepage links -->

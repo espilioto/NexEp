@@ -7,3 +7,21 @@ $('a').click(function(){
     return false;
 });
 
+$(function() {
+	$.scrollify({
+		section : ".scrollhere",
+		sectionName:false,
+		interstitialSection : ".footer",
+		easing: "easeOutExpo",
+		scrollSpeed: 1100,
+		offset : 0,
+		scrollbars: false,
+		standardScrollElements: "",
+		setHeights: true,
+		overflowScroll: true
+	});
+});
+
+// $( document ).ready(function() {
+
+// });

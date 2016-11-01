@@ -1,7 +1,5 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -16,25 +14,25 @@ require('laravel-elixir-vue-2');
 elixir.config.sourcemaps = false;
 
 elixir(mix => {
-    mix.styles([ //vendor css
+    mix.styles([            //vendor css
         'bootstrap-theme.css',
         'bootstrap.css',
         'jquery-ui.css',
         'jquery-ui.structure.css',
         'jquery-ui.theme.css',
         'font-awesome.css',
-        'style.css',
     ]);
-    mix.scripts([ //vendor js
+    mix.scripts([           //vendor js
         'jquery-3.1.1.js',
         'jquery-ui.js',
         'bootstrap.js',
-        'npm.js',
+        'jquery.scrollify.js',
     ]);
 
-    mix.scripts('js.js', 'public/js/js.js'); //my js
-        
-    mix.styles('landing.css', 'public/css/landing.css'); //theme files
+    mix.scripts('js.js', 'public/js/js.js');            //my js
+    mix.styles('style.css', 'public/css/style.css');    //my css
+
+    mix.styles('landing.css', 'public/css/landing.css');//theme files
     mix.scripts('landing.js', 'public/js/landing.js');
 
     mix.copy('resources/assets/fonts', 'public/fonts');
