@@ -26,14 +26,13 @@ elixir(mix => {
         'jquery-3.1.1.js',
         'jquery-ui.js',
         'bootstrap.js',
-        'jquery.scrollify.js',
     ]);
 
     mix.scripts('js.js', 'public/js/js.js');            //my js
     mix.styles('style.css', 'public/css/style.css');    //my css
 
     mix.styles('landing.css', 'public/css/landing.css');//theme files
-    mix.scripts('landing.js', 'public/js/landing.js');
+    // mix.scripts('landing.js', 'public/js/landing.js');
 
     mix.copy('resources/assets/fonts', 'public/fonts');
 });
