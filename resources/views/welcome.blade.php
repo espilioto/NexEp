@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>gotta.watch</title>
+    <title>Home - gotta.watch</title>
 @stop
 
 @section('head')
@@ -21,9 +21,4 @@
         </div>
     </div> 
     
-    <div class="footer">
-        <div class="text-center">
-            <p class="copyright text-muted small">Using the Start Bootstrap - Landing Page template. <br>Copyright &copy; SouLSLayeR 2016. All Rights Reserved.</p>
-        </div>
-    </div>
 @stop

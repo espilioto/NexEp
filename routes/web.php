@@ -28,9 +28,9 @@ Route::get('post', function(Request $request)
 	return $request->user()->shows()->attach(150);
 });
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index'); //home view
 
-Route::get('/shows', 'ShowsController@store');
+Route::get('/shows', 'ShowsController@store'); //
 
 Route::get('/autocomplete', array('as' => 'autocomplete', 'uses' => 'ShowsController@autocomplete'));
 

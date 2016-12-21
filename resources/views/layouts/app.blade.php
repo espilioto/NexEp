@@ -82,10 +82,18 @@
         </div>
     </nav>
 
+    @yield('footer')
+    <div class="footer">
+        <div class="text-center">
+            <p class="copyright text-muted small">Using the Start Bootstrap - Landing Page template. <br>Copyright &copy; SouLSLayeR 2016. All Rights Reserved.</p>
+        </div>
+    </div>
+    
     @yield('content')
     <!-- Scripts -->
     <script src="{{ elixir('js/all.js') }}"></script>
 
     @yield('js')
+
 </body>
 </html>

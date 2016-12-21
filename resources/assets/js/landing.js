@@ -1,4 +1,4 @@
-//ill leave that here for historical reasons
+//I'll leave that here for historical reasons
 
 var $root = $('html, body');
 

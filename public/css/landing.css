@@ -4,18 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-}
-footer {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
 body,
 html {
     width: 100%;
@@ -36,16 +24,6 @@ body, h1, h2, h3, h4, h5, h6 {
 .lead {
     font-size: 18px;
     font-weight: 400;
-}
-
-.banner {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../images/bg.jpg) no-repeat center center;
-    background-size: cover;
-    align-items: center;
 }
 
 .intro-message {
@@ -92,13 +70,6 @@ body, h1, h2, h3, h4, h5, h6 {
         width: 100%;
     }
 }
-.vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-
-  display: flex;
-  align-items: center;
-}
 .banner h2 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
@@ -114,7 +85,4 @@ body, h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
-p.copyright {
-    margin: 15px 0 0;
-}
 /*I bet someone is cringing so hard while reading my spaghetti css derps*/

@@ -1,0 +1,13 @@
+.panel {
+    margin-top: 50px;
+}
+#left-panel {
+    position: absolute;
+    left: 50px;
+    width: 250px;
+}
+#right-panel {
+    position: absolute;
+    right: 50px;
+    width: 250px;
+}
