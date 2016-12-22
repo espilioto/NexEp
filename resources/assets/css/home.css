@@ -1,5 +1,6 @@
 .panel {
     margin-top: 50px;
+	color: gray;
 }
 #left-panel {
     position: absolute;

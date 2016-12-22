@@ -9,13 +9,16 @@
 @stop
 
 @section('content')
-    <div class="banner vertical-center">
         <div class="container">
             <div class="panel panel-default" id="left-panel">
                 <div class="panel-heading text-center">Watchlist <span class="glyphicon glyphicon-film"></span></div>
                 <div class="panel-body">
                     <!-- show list -->
-                    
+                    asdbr <br>
+                    asdbr <br>
+                    asdbr <br>
+                    asdbr <br>
+                    asdbr <br>
                 </div>
             </div>
         
@@ -23,13 +26,16 @@
             <div class="panel panel-default text-center" id="right-panel">
                 <div class="panel-heading">Search shows</div>
                 <div class="panel-body">
-                    
+                    asdbr <br>
+                    asdbr <br>
+                    asdbr <br>
+                    asdbr <br>
+                    asdbr <br>
                 </div>
                 <!-- search results -->
                 
             </div>
         </div>
-    </div> 
 @stop
 
 @section('js')

@@ -34,7 +34,7 @@ elixir(mix => {
 
     mix.styles('landing.css', 'public/css/landing.css');//theme style
     // mix.scripts('landing.js', 'public/js/landing.js');
-    mix.styles('home.css', 'public/css/home.css');//dashboard style
+    mix.styles('home.css', 'public/css/home.css');      //dashboard style
 
     mix.copy('resources/assets/fonts', 'public/fonts');
 });
